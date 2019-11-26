@@ -1,0 +1,16 @@
+img
+	{
+	width:100%;
+	}
+
+	body 
+	{	
+		color: black;
+		background-color: white;
+		font-family: 'Roboto';font-size: 18px;
+	}
+
+	h3 
+	{
+		color: teal;
+	}
