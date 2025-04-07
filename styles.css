@@ -1,3 +1,13 @@
+/* Banner Styles */
+.banner img {
+  width: 100%; /* Makes the banner stretch across the page */
+  height: auto; /* Maintains the aspect ratio */
+  display: block; /* Removes unwanted gaps below the image */
+  margin: 0;
+  padding: 0;
+}
+
+
 /* General Styles */
 body {
   font-family: 'Roboto', sans-serif; /* Default font for the website */
