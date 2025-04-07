@@ -1,0 +1,46 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif; /* Default font for the website */
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* Black transparent background */
+  transition: left 0.3s ease;
+  padding: 1rem;
+  font-family: 'Big Shoulders Display', cursive; /* Font for the sidebar */
+}
+
+.sidebar.active {
+  left: 0; /* Slide out */
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 1rem 0;
+}
+
+.sidebar nav ul li a {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Toggle Button */
+.toggle-button {
+  position
