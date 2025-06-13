@@ -1,4 +1,2 @@
-# RaspberryPi Projects Page
-Social Experiment Platform
-
+dariens.me
 
