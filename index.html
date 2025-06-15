@@ -1,63 +1,688 @@
-<!doctype html>
-<html>
-  <head>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Untitled</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
 
-<link href='https://fonts.googleapis.com/css?family=Big Shoulders Display' rel='stylesheet'>
-<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-<link rel="stylesheet" type="text/css" href="style.css">	
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
 
-<title>Serial Experiment Lain</title>
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
 	
-	<style>
-
-	</style>	
-  	</head>
-    
-  <body>
-	  
-	<a href = "http://www.github.com/darienesf"> 
-    	<img src = "banner.png">
-    	</a>
-  
-    <div>
-	 <p>
-		<a href="https://www.github.com/darienesf" target="blank" >
-		<img src="img/pfp.jpg" style="border-radius: 60%; width:60px; size: 100px;">
-		</a> 	
-	<a href = "showcase.html"> <img src= "camVec.jpg" style="border-radius:60%; margin-bottom: 0; width: 5%; height: 5%;"> </a> 
-	<a href = "https://www.discordapp.com/users/314824720254238731"> <img src="discordIcon.jpg" style="width: 3.5%; height: 3.5%;"></a> 
-	<a href = "https://www.discord.gg/ugTtWWZ"> <img src= "discordGem.jpg" style= "padding-left: 20px; padding-bottom: 5px; width:2%; height:2%;"></img> </a>
-    	</p>
-  </div>
-
-	<p>
-	<a href = "#"> 
-		<img src = "banner.jpg" style="height: 720px; width: 100%;">
-	</a>
-	</p>
-<div>
-	<br> <h3>	About Me	</h3>
-    <p id= "aboutMe1";>
-        I am a well known computer nerd / tech-wiz among my circle of connections. <br>
-		<br> As an alumni from a technological High School I contain many years of experience in technology & the IoT (Internet of Things) spectrum. <br>
-      	<br> I can accelerate your machine's performance, purge your system of viruses & remove unnecessary files. <br>
-      	<br> If you have any issue with your devices or software then just contact me, 
-	and we can negotiate the appropriate service, custom-tailored to fit your specific needs!
-    </p>
-</div>
-
-<div> 
-<p>
-    <ul style="list-style:none;">
-     <br> <h3> Languages </h3>
-      <li> Spanish (Español) - Native/Bilingual 		</li>
-	  <li> English - Fluent					</li> 
-	    <li>    French (Français) - Conversational </li>
-      <li> Italian (Italiano) - Conversational  		</li>
-      <li> Japanese (日本語 (にほんご／にっぽんご)) - Basic	</li>
-    </ul>
-</p>
-</div>
-
-  </body>
-</html>
+</style></head><body><article id="2117c7c5-d184-8088-87f4-dd6ae4d22b71" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/woodcuts_3.jpg" style="object-position:center 19.999999999999996%"/><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><figure id="2127c7c5-d184-8035-9742-ef134cd9af76" class="image" style="text-align:left"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Salsa.gif"><img style="width:96px" src="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Salsa.gif"/></a></figure><h1 id="2127c7c5-d184-8037-bb18-f167afc3edae" class="">Hello, my name is Darien Suarez</h1><hr id="2117c7c5-d184-8111-8d7a-cf1db1b52b62"/><div id="2117c7c5-d184-811b-8f2b-d8eaed7fc372" class="column-list"><div id="2117c7c5-d184-81f3-a60f-d35d1ba10762" style="width:25%" class="column"><h3 id="2117c7c5-d184-815f-b1c6-c5e16359be82" class="">Let’s connect</h3><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-81cb-aa64-d48291d66f19"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/mail_gray.svg"/></div><div style="width:100%"><a href="mailto:suarez@dariens.me">Email</a></div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8107-8a97-e41c5dbc3a9f"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/phone-call_gray.svg"/></div><div style="width:100%"><a href="tel:+13479086182">Phone</a></div></figure><h1 id="2117c7c5-d184-81f1-8a33-e04cbaa706e4" class="">Skills</h1><hr id="2117c7c5-d184-81ef-a7f1-f1b362f0f32a"/><p id="2117c7c5-d184-8111-8987-c3510626b743" class="">⎆ IT Specialist</p><p id="2117c7c5-d184-8123-a768-ecbe33748904" class="">👾 Programmer</p><p id="2117c7c5-d184-81ea-9a0d-d153c662432d" class="">📸 Photographer</p><p id="2117c7c5-d184-8197-a48e-f78a247c7cc7" class="">💼 Team Leader</p><p id="2117c7c5-d184-8134-a92f-ff3f7fc605da" class="">🙅🏽‍♂️ Not a Follower</p><h1 id="2117c7c5-d184-811a-82ab-cce47c227277" class="">Certifications</h1><hr id="2117c7c5-d184-8196-9556-f8ccc3ef70ba"/><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8132-bf23-cdb33a815590"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%">CompTIA A+</div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-819d-8553-e14e53004599"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%"></div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8191-845f-e55cbf68ded9"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%"></div></figure><h1 id="2117c7c5-d184-8180-b17a-f88a567e83e2" class="">Education</h1><hr id="2117c7c5-d184-81ee-9843-f790e43765c1"/><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-81fd-816d-ceb46afa3215"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%">BSc (Computer Science 2020)</div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-813b-b770-fec12c0a76c1"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%">Advanced (High School Diploma 2015)</div></figure><h1 id="2117c7c5-d184-81c8-84cc-cba3d34fbe58" class="">Hobbies</h1><hr id="2117c7c5-d184-8145-9bed-d5c3ffe156e3"/><p id="2117c7c5-d184-81b1-876e-e506b8763c05" class="">🎮 Playing video games </p><p id="2117c7c5-d184-8167-8788-f8a8b6babfea" class="">🎥 Watching tech teardown videos </p><p id="2117c7c5-d184-8121-97e4-d18947b69d4e" class="">🐕 Going out for walks with my dogs</p><p id="2117c7c5-d184-81bf-8d8d-d80c8b76743d" class="">🎸 Playing guitar </p><p id="2117c7c5-d184-8152-9206-cc1979a60b55" class="">🌏 World building (D&amp;D)</p><p id="2127c7c5-d184-801c-bff3-ecd4db85c90b" class="">
+</p></div><div id="2117c7c5-d184-818a-8db8-cffe1b09ddb4" style="width:75%" class="column"><h1 id="2117c7c5-d184-81ec-86d0-c2fe91b9cc66" class="">About Me</h1><hr id="2117c7c5-d184-81e5-be32-de792b24f746"/><p id="2117c7c5-d184-81b8-945d-cd4bc2bc5cdd" class="">Working on improving myself one line of code at at time!<br/>With over 10 years of experience in supporting companies of all sizes to produce extraordinary results. <br/></p><p id="2117c7c5-d184-80ca-9976-e126f4947080" class="">Follow me on my platforms to stay-in-touch!</p><div id="2117c7c5-d184-81ad-8b71-f538e0db8bd1" class="column-list"><div id="2127c7c5-d184-80f1-918a-d07cfa200ff1" style="width:62.5%" class="column"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8189-8172-db725ccfcb36"><div style="width:100%"><a href="https://github.com/darienesf">Github</a></div></figure></div><div id="2117c7c5-d184-8130-a2c4-f8093dfdd0ce" style="width:65.50000000000003%" class="column"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-81d2-856b-d87ca7552df5"><div style="width:100%"><a href="https://vsco.co/dluxvisuals/gallery">VSCO</a></div></figure><p id="2127c7c5-d184-80dd-9283-d5dc7b3501f2" class="">
+</p></div><div id="2117c7c5-d184-81a7-9c4d-e7fa4243723a" style="width:68%" class="column"><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-815a-874e-ca312ba197fe"><div style="font-size:1.5em"><img class="icon" src="https://i.pinimg.com/736x/92/d1/db/92d1db1521d374335498624cc95e9554.jpg"/></div><div style="width:100%"><p id="2117c7c5-d184-81bd-ac97-d95238612595" class=""><a href="https://www.linkedin.com/in/darien-suarez-3324b011a/">Linkedin</a></p></div></figure></div><div id="2117c7c5-d184-8152-b15d-f43f7abafa15" style="width:96%" class="column"><p id="2117c7c5-d184-8056-bdde-d39de1d8c070" class="">
+</p></div></div><h1 id="2117c7c5-d184-81d7-8bcd-f114a65bfb9c" class="">Services</h1><p id="2117c7c5-d184-8134-a3a9-c2eaa2b7b19a" class="">Checkout services offered by me</p><hr id="2117c7c5-d184-81e6-a6d6-cc924a0502de"/><div id="2117c7c5-d184-81db-9944-c2535fe60f0f" class="collection-content"><h4 class="collection-title">Services</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th></tr></thead><tbody><tr id="2117c7c5-d184-81ef-9448-c20a6ba51a01"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Services%202117c7c5d18481db9944c2535fe60f0f/Data%20Storage%202117c7c5d18481ef9448c20a6ba51a01.html"><span class="icon">🗄️</span>Data Storage</a></td></tr><tr id="2117c7c5-d184-810b-a4f7-d22f9fe290a8"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Services%202117c7c5d18481db9944c2535fe60f0f/Website%20Designing%202117c7c5d184810ba4f7d22f9fe290a8.html"><span class="icon">💻</span>Website Designing</a></td></tr><tr id="2117c7c5-d184-816c-8b22-c6e0ea7090e0"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Services%202117c7c5d18481db9944c2535fe60f0f/Social%20Media%20Management%202117c7c5d184816c8b22c6e0ea7090e0.html"><span class="icon">👍🏽</span>Social Media Management</a></td></tr><tr id="2117c7c5-d184-818c-b901-c5121c211570"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Services%202117c7c5d18481db9944c2535fe60f0f/Community%20Management%202117c7c5d184818cb901c5121c211570.html"><span class="icon">👪</span>Community Management</a></td></tr><tr id="2117c7c5-d184-811f-9cf4-d51eb17c3d4b"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Services%202117c7c5d18481db9944c2535fe60f0f/Content%20Creation%202117c7c5d184811f9cf4d51eb17c3d4b.html"><span class="icon">📹</span>Content Creation</a></td></tr><tr id="2127c7c5-d184-80bd-b9b2-d3780fa4ccfe"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Services%202117c7c5d18481db9944c2535fe60f0f/Research%20&amp;%20Development%202127c7c5d18480bdb9b2d3780fa4ccfe.html"><span class="icon">🛠️</span>Research &amp; Development</a></td></tr></tbody></table><br/><br/></div><h1 id="2117c7c5-d184-810f-a610-f8ce57ac5963" class="">Expertise</h1><p id="2127c7c5-d184-80f5-bbb4-cf35b4f1b6e8" class="">Things I know best</p><hr id="2117c7c5-d184-8141-b270-ea6cbe3cc75b"/><div id="2117c7c5-d184-812d-8eca-f62c6233c221" class="collection-content"><h4 class="collection-title">Tools</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesText"><path d="M1.56738 3.25879H14.4258C14.7676 3.25879 15.0479 2.97852 15.0479 2.63672C15.0479 2.29492 14.7744 2.02148 14.4258 2.02148H1.56738C1.21875 2.02148 0.952148 2.29492 0.952148 2.63672C0.952148 2.97852 1.22559 3.25879 1.56738 3.25879ZM1.56738 6.84082H14.4258C14.7676 6.84082 15.0479 6.56055 15.0479 6.21875C15.0479 5.87695 14.7744 5.60352 14.4258 5.60352H1.56738C1.21875 5.60352 0.952148 5.87695 0.952148 6.21875C0.952148 6.56055 1.22559 6.84082 1.56738 6.84082ZM1.56738 10.4229H14.4258C14.7676 10.4229 15.0479 10.1426 15.0479 9.80078C15.0479 9.45898 14.7744 9.18555 14.4258 9.18555H1.56738C1.21875 9.18555 0.952148 9.45898 0.952148 9.80078C0.952148 10.1426 1.22559 10.4229 1.56738 10.4229ZM1.56738 14.0049H8.75879C9.10059 14.0049 9.38086 13.7246 9.38086 13.3828C9.38086 13.041 9.10742 12.7676 8.75879 12.7676H1.56738C1.21875 12.7676 0.952148 13.041 0.952148 13.3828C0.952148 13.7246 1.22559 14.0049 1.56738 14.0049Z"></path></svg></span>Property</th><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesSelect"><path d="M8 15.126C11.8623 15.126 15.0615 11.9336 15.0615 8.06445C15.0615 4.20215 11.8623 1.00293 7.99316 1.00293C4.13086 1.00293 0.938477 4.20215 0.938477 8.06445C0.938477 11.9336 4.1377 15.126 8 15.126ZM8 13.7383C4.85547 13.7383 2.33301 11.209 2.33301 8.06445C2.33301 4.91992 4.84863 2.39746 7.99316 2.39746C11.1377 2.39746 13.6738 4.91992 13.6738 8.06445C13.6738 11.209 11.1445 13.7383 8 13.7383ZM7.62402 10.6348C7.79492 10.915 8.20508 10.9287 8.37598 10.6348L10.666 6.73145C10.8574 6.41016 10.7002 6.04102 10.3652 6.04102H5.62793C5.29297 6.04102 5.14941 6.43066 5.32031 6.73145L7.62402 10.6348Z"></path></svg></span>Level of expertise</th></tr></thead><tbody><tr id="2117c7c5-d184-8191-b0f4-e10326bfc213"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Tools%202117c7c5d184812d8ecaf62c6233c221/Microsoft%20365%202117c7c5d1848191b0f4e10326bfc213.html">Microsoft 365</a></td><td class="cell-kSz}">Office 365 (Word, Powerpoint, Excel, OneDrive, Teams, Outlook)<br/>Intune MDM<br/>Entra ID<br/>Azure AD<br/>Dynamics GP<br/></td><td class="cell-q?me"><span class="selected-value select-value-color-green">Expert</span></td></tr><tr id="2117c7c5-d184-81da-8dd5-d9eed484b4c3"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Tools%202117c7c5d184812d8ecaf62c6233c221/Apple%20Ecosystem%202117c7c5d18481da8dd5d9eed484b4c3.html">Apple Ecosystem</a></td><td class="cell-kSz}">MacOS<br/>iOS<br/>iPadOS<br/>WatchOS<br/>TvOS<br/>VisionOS<br/>ASM (Apple School Management)<br/>ABM (Apple Business Management)<br/></td><td class="cell-q?me"><span class="selected-value select-value-color-green">Expert</span></td></tr><tr id="2117c7c5-d184-8189-a0ab-f7236d52ffe5"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Tools%202117c7c5d184812d8ecaf62c6233c221/Adobe%20Creative%20Cloud%202117c7c5d1848189a0abf7236d52ffe5.html">Adobe Creative Cloud</a></td><td class="cell-kSz}">Adobe Creative Cloud Admin Console<br/>Adobe CC Suite<br/>Adobe Dreamweaver<br/>Adobe Lightroom<br/>Adobe Illustrator<br/>Adobe Photoshop<br/></td><td class="cell-q?me"><span class="selected-value select-value-color-green">Expert</span></td></tr><tr id="2117c7c5-d184-814b-840f-e0453714faa5"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Tools%202117c7c5d184812d8ecaf62c6233c221/Amazon%20Web%20Services%202117c7c5d184814b840fe0453714faa5.html">Amazon Web Services</a></td><td class="cell-kSz}">S3 Buckets<br/>Server Hosting<br/>EC2 Hosting<br/></td><td class="cell-q?me"><span class="selected-value select-value-color-blue">Intermediate</span></td></tr></tbody></table><br/><br/></div><h1 id="2117c7c5-d184-814b-a439-e65e438c9ae7" class="">Experience</h1><hr id="2117c7c5-d184-8149-861b-f3d044bbcb88"/><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8181-b89a-c67dc64c0615"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/computer_gray.svg"/></div><div style="width:100%"><mark class="highlight-red"><strong>Network Engineer<br/><br/></strong></mark><em>TPA Services Group</em> <mark class="highlight-gray">(Apr 2022- Present)</mark><ul id="2127c7c5-d184-8025-b4b4-d361457f15c7" class="bulleted-list"><li style="list-style-type:disc">Helped support a multitude of high-value clients with varying technological needs (videography, project management, IT service delivery and solutions)</li></ul><ul id="2127c7c5-d184-80f7-bb46-e5a902ecca64" class="bulleted-list"><li style="list-style-type:disc">Assigned to work directly with the IT Director and Principals of SAR Academy a Yeshiva, focusing on content filtering, cybersecurity, asset protection, and general IT help</li></ul></div></figure><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-818b-abf0-cb471afba414"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/laptop_gray.svg"/></div><div style="width:100%"><mark class="highlight-red"><strong>Junior Help Desk Technician<br/><br/></strong></mark><em>Shape Integrations</em> <mark class="highlight-gray">(Apr 2019- Mar2022)</mark><ul id="2127c7c5-d184-8076-a2ba-c6e85f3c4173" class="bulleted-list"><li style="list-style-type:disc">Streamlined ticketing system for incoming Service Requests</li></ul><ul id="2127c7c5-d184-80ff-a622-c47aba0a8afb" class="bulleted-list"><li style="list-style-type:disc">Conceptualized a knowledge base from previous informational documents provided to clients and team</li></ul></div></figure><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8117-9b72-c57393329bd4"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/refresh-reverse_gray.svg"/></div><div style="width:100%"><mark class="highlight-red"><strong>Returns Department<br/><br/></strong></mark><em><mark class="highlight-purple">The</mark></em><mark class="highlight-purple"><strong> </strong></mark><em><mark class="highlight-purple">Home</mark></em><mark class="highlight-purple"><strong> </strong></mark><em><mark class="highlight-purple">Depot</mark></em> <mark class="highlight-gray">(May 2018- Jan 2019)<br/><br/></mark><mark class="highlight-purple">Accepted customer returns ensuring quality standards for items that are acceptable to reduce shrink.</mark></div></figure><figure class="block-color-purple callout" style="white-space:pre-wrap;display:flex" id="2127c7c5-d184-80c1-a448-d1d7059328f3"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/tag_gray.svg"/></div><div style="width:100%"><mark class="highlight-red"><strong>Sales Consultant<br/><br/></strong></mark><em>Best Buy Inc.</em> <mark class="highlight-gray">(Apr 2016- Nov 2017)<br/><br/></mark><mark class="highlight-purple">Motivated sales team and generated revenue for store by understanding customer needs and providing appropriate services and merchandise </mark><mark class="highlight-gray"><br/><br/></mark></div></figure><p id="2127c7c5-d184-8018-89e7-e414ff926b7c" class="">
+</p></div></div><hr id="2117c7c5-d184-819b-9fc9-de0722e80438"/><h1 id="2117c7c5-d184-819f-b930-e195e47c4fc2" class="">Work Examples</h1><hr id="2117c7c5-d184-8135-a891-e356c25b53f0"/><div id="2117c7c5-d184-8116-aeed-d2fd307a0edc" class="collection-content"><h4 class="collection-title">Portfolio Items</h4><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg aria-hidden="true" role="graphics-symbol" viewBox="0 0 16 16" style="width:14px;height:14px;display:block;fill:rgba(71, 70, 68, 0.6);flex-shrink:0" class="typesTitle"><path d="M0.637695 13.1914C1.0957 13.1914 1.32812 13 1.47852 12.5215L2.24414 10.3887H6.14746L6.90625 12.5215C7.05664 13 7.2959 13.1914 7.74707 13.1914C8.22559 13.1914 8.5332 12.9043 8.5332 12.4531C8.5332 12.2891 8.50586 12.1523 8.44434 11.9678L5.41602 3.79199C5.2041 3.21777 4.82129 2.9375 4.19922 2.9375C3.60449 2.9375 3.21484 3.21777 3.0166 3.78516L-0.0322266 12.002C-0.09375 12.1797 -0.121094 12.3232 -0.121094 12.4668C-0.121094 12.918 0.166016 13.1914 0.637695 13.1914ZM2.63379 9.12402L4.17871 4.68066H4.21973L5.76465 9.12402H2.63379ZM12.2793 13.2324C13.3115 13.2324 14.2891 12.6787 14.7129 11.8037H14.7402V12.5762C14.7471 12.9863 15.0273 13.2393 15.4238 13.2393C15.834 13.2393 16.1143 12.9795 16.1143 12.5215V8.00977C16.1143 6.49902 14.9658 5.52148 13.1543 5.52148C11.7666 5.52148 10.6592 6.08887 10.2695 6.99121C10.1943 7.15527 10.1533 7.3125 10.1533 7.46289C10.1533 7.81152 10.4062 8.04395 10.7686 8.04395C11.0215 8.04395 11.2129 7.94824 11.3496 7.73633C11.7529 6.99121 12.2861 6.65625 13.1064 6.65625C14.0977 6.65625 14.6992 7.20996 14.6992 8.1123V8.67285L12.5664 8.7959C10.7686 8.8916 9.77734 9.69824 9.77734 11.0107C9.77734 12.3369 10.8096 13.2324 12.2793 13.2324ZM12.6621 12.1387C11.8008 12.1387 11.2129 11.667 11.2129 10.9561C11.2129 10.2725 11.7598 9.82129 12.7578 9.75977L14.6992 9.62988V10.3203C14.6992 11.3457 13.7969 12.1387 12.6621 12.1387Z"></path></svg></span>Name</th></tr></thead><tbody><tr id="2117c7c5-d184-8190-8885-f60a0094d12e"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Portfolio%20Items%202117c7c5d1848116aeedd2fd307a0edc/Website%20Launching%20Checklist%20Carousel%20Design%202117c7c5d18481908885f60a0094d12e.html"><img class="icon" src="https://www.notion.so/icons/bell-off_gray.svg"/>Website Launching Checklist Carousel Design</a></td></tr><tr id="2117c7c5-d184-815d-ab10-dc313b3bcd49"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Portfolio%20Items%202117c7c5d1848116aeedd2fd307a0edc/Cleaning%20Service%20Website%20Design%202117c7c5d184815dab10dc313b3bcd49.html"><img class="icon" src="https://www.notion.so/icons/cake_gray.svg"/>Cleaning Service Website Design</a></td></tr><tr id="2117c7c5-d184-81c8-a1e7-c510e6965991"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Portfolio%20Items%202117c7c5d1848116aeedd2fd307a0edc/Website%20Image%20Optimization%20Tips%20Carousel%20Design%202117c7c5d18481c8a1e7c510e6965991.html"><img class="icon" src="https://www.notion.so/icons/bathtub-shower_gray.svg"/>Website Image Optimization Tips Carousel Design</a></td></tr><tr id="2117c7c5-d184-8199-9779-c664e1a6fc50"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Portfolio%20Items%202117c7c5d1848116aeedd2fd307a0edc/Appco%20Mobile%20App%20Landing%20Page%20Design%202117c7c5d18481999779c664e1a6fc50.html"><img class="icon" src="https://www.notion.so/icons/metronome_gray.svg"/>Appco Mobile App Landing Page Design</a></td></tr><tr id="2117c7c5-d184-81fc-9d99-e726a9681154"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Portfolio%20Items%202117c7c5d1848116aeedd2fd307a0edc/Itech%20Moile%20App%20Website%20Design%202117c7c5d18481fc9d99e726a9681154.html"><img class="icon" src="https://www.notion.so/icons/create_gray.svg"/>Itech Moile App Website Design</a></td></tr><tr id="2117c7c5-d184-8123-824d-c4963c2326ab"><td class="cell-title"><a href="Untitled%202117c7c5d184808887f4dd6ae4d22b71/Portfolio%20Items%202117c7c5d1848116aeedd2fd307a0edc/Sehat%20Recover%20Website%20Design%20(WordPress)%202117c7c5d1848123824dc4963c2326ab.html"><img class="icon" src="https://www.notion.so/icons/eject_gray.svg"/>Sehat Recover Website Design (WordPress)</a></td></tr></tbody></table><br/><br/></div><h1 id="2117c7c5-d184-814a-aeba-e880426ace43" class="">Testimonials</h1><p id="2117c7c5-d184-8199-a1a8-fdae08b0af59" class="">Here is what peoples say about my services</p><hr id="2117c7c5-d184-81f5-9451-fbfdf9530811"/><div id="2117c7c5-d184-81fd-a982-d61dfc310cfa" class="column-list"><div id="2117c7c5-d184-812d-839b-d4efe9434fb8" style="width:33.33333333333333%" class="column"><figure id="2117c7c5-d184-81cb-ab93-d1b7945457cb"><div class="source"><a href="https://youtu.be/n__VQOEoJco">https://youtu.be/n__VQOEoJco</a></div></figure></div><div id="2117c7c5-d184-8106-901a-fef9e89242a3" style="width:33.33333333333333%" class="column"><figure id="2117c7c5-d184-8176-b213-de05739c1fa9"><div class="source"><a href="https://youtu.be/n__VQOEoJco">https://youtu.be/n__VQOEoJco</a></div></figure></div><div id="2117c7c5-d184-8113-9a70-fca396a0f98d" style="width:33.33333333333333%" class="column"><figure id="2117c7c5-d184-813c-971d-fd4f0a2fd2bc"><div class="source"><a href="https://youtu.be/n__VQOEoJco">https://youtu.be/n__VQOEoJco</a></div></figure></div></div><p id="2117c7c5-d184-8192-8d8f-c946586645bc" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
