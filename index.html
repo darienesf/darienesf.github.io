@@ -14,12 +14,20 @@ body {
 	margin: 0;
 	padding: 0;
 }
-@media only screen {
-	body {
-		margin: 2em auto;
-		max-width: 900px;
-		color: rgb(55, 53, 47);
-	}
+
+body {
+	margin: 2em 1em; /* Smaller side margins for mobile */
+	max-width: 100vw;
+	color: rgb(55, 53, 47);
+	box-sizing: border-box;
+}
+
+/* For tablets and up, center and limit width */
+@media (min-width: 600px) {
+    body {
+        margin: 2em auto;
+        max-width: 900px;
+    }
 }
 
 body {
@@ -678,6 +686,84 @@ blockquote {
 
 .checkbox-off {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+/* Dark theme overrides */
+html, body {
+    background: #181A1B;
+    color: #ECECEC;
+}
+
+body {
+    margin: 2em 1em;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+@media (min-width: 600px) {
+    body {
+        margin: 2em auto;
+        max-width: 900px;
+    }
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6, .page-title {
+    color: #F3F3F3;
+}
+
+/* Callouts and cards */
+.callout, .block-color-default, .block-color-purple, .block-color-red, .block-color-gray {
+    background: #232526;
+    color: #ECECEC;
+    border-color: #333;
+}
+
+/* Tables */
+table, th, td {
+    background: #232526;
+    color: #ECECEC;
+    border-color: #333;
+}
+
+/* Horizontal rule */
+hr {
+    border-bottom: 1px solid #333;
+}
+
+/* Links */
+a, a:visited {
+    color: #7AB6FF;
+}
+
+/* Code blocks */
+.code, code {
+    background: #232526;
+    color: #FFB86C;
+}
+
+/* Highlighted text */
+mark, .highlight-red, .highlight-gray, .highlight-purple {
+    background: #333;
+    color: #FFB6B6;
+}
+
+/* Page cover image border for contrast */
+.page-cover-image {
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+/* Selected value (tags) */
+.selected-value {
+    background: #333;
+    color: #ECECEC;
+}
+
+/* Table header */
+.simple-table-header-color, th {
+    background: #232526;
+    color: #ECECEC;
 }
 	
 </style></head><body><article id="2117c7c5-d184-8088-87f4-dd6ae4d22b71" class="page sans"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/woodcuts_1.jpg" style="object-position:center 7.359999999999999%"/><h1 class="page-title"></h1><p class="page-description"></p></header><div class="page-body"><figure id="2127c7c5-d184-8035-9742-ef134cd9af76" class="image" style="text-align:left"><a href="https://www.avatarist.com/avatars/Games/Sprites/Mother-3/Salsa.gif"><img style="width:96px" src="https://www.avatarist.com/avatars/Games/Sprites/Mother-3/Salsa.gif"/></a></figure><h1 id="2127c7c5-d184-8037-bb18-f167afc3edae" class="">Hello, my name is Darien Suarez</h1><hr id="2117c7c5-d184-8111-8d7a-cf1db1b52b62"/><div id="2117c7c5-d184-811b-8f2b-d8eaed7fc372" class="column-list"><div id="2117c7c5-d184-81f3-a60f-d35d1ba10762" style="width:25%" class="column"><h3 id="2117c7c5-d184-815f-b1c6-c5e16359be82" class="">Let’s connect!</h3><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-81cb-aa64-d48291d66f19"><div style="font-size:1.5em"><span class="icon">📧</span></div><div style="width:100%"><a href="mailto:suarez@dariens.me">Email</a></div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8107-8a97-e41c5dbc3a9f"><div style="font-size:1.5em"><span class="icon">📞</span></div><div style="width:100%"><a href="tel:+13479086182">Phone</a></div></figure><h1 id="2117c7c5-d184-81f1-8a33-e04cbaa706e4" class="">Skills</h1><hr id="2117c7c5-d184-81ef-a7f1-f1b362f0f32a"/><p id="2117c7c5-d184-8111-8987-c3510626b743" class="">⎆ IT Specialist</p><p id="2117c7c5-d184-8123-a768-ecbe33748904" class="">👾 Programmer</p><p id="2117c7c5-d184-81ea-9a0d-d153c662432d" class="">📸 Photographer</p><p id="2117c7c5-d184-8197-a48e-f78a247c7cc7" class="">💼 Team Leader</p><p id="2117c7c5-d184-8134-a92f-ff3f7fc605da" class="">🙅🏽‍♂️ Not a Follower</p><h1 id="2117c7c5-d184-811a-82ab-cce47c227277" class="">Certifications</h1><hr id="2117c7c5-d184-8196-9556-f8ccc3ef70ba"/><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8132-bf23-cdb33a815590"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%">CompTIA A+</div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-8191-845f-e55cbf68ded9"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%">CompTIA Network+</div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-819d-8553-e14e53004599"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%">AWS Cloud Practitioner (in progress)</div></figure><h1 id="2117c7c5-d184-8180-b17a-f88a567e83e2" class="">Education</h1><hr id="2117c7c5-d184-81ee-9843-f790e43765c1"/><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-81fd-816d-ceb46afa3215"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%">BSc (Computer Science 2020)</div></figure><figure class="block-color-default callout" style="white-space:pre-wrap;display:flex" id="2117c7c5-d184-813b-b770-fec12c0a76c1"><div style="font-size:1.5em"><img class="icon" src="https://www.notion.so/icons/arrow-right_gray.svg"/></div><div style="width:100%">Advanced (High School Diploma 2015)</div></figure><h1 id="2117c7c5-d184-81c8-84cc-cba3d34fbe58" class="">Hobbies</h1><hr id="2117c7c5-d184-8145-9bed-d5c3ffe156e3"/><p id="2117c7c5-d184-81b1-876e-e506b8763c05" class="">🎮 Playing video games </p><p id="2117c7c5-d184-8167-8788-f8a8b6babfea" class="">🎥 Watching tech teardown videos </p><p id="2117c7c5-d184-8121-97e4-d18947b69d4e" class="">🐕 Going out for walks with my dogs</p><p id="2117c7c5-d184-81bf-8d8d-d80c8b76743d" class="">🎸 Playing guitar </p><p id="2117c7c5-d184-8152-9206-cc1979a60b55" class="">🌏 World building (D&amp;D)</p><p id="2127c7c5-d184-801c-bff3-ecd4db85c90b" class="">
